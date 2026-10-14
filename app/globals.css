@@ -58,3 +58,7 @@ body{background-color:var(--void);background-image:radial-gradient(ellipse 72% 3
 body:after{content:"";position:fixed;z-index:19;top:0;left:50%;width:min(760px,74vw);height:1px;transform:translateX(-50%);pointer-events:none;background:linear-gradient(90deg,transparent,rgba(226,232,240,.46),transparent);box-shadow:0 0 28px 7px rgba(203,213,225,.055)}
 @media(max-width:640px){body{background-image:radial-gradient(ellipse 115% 250px at 50% -30px,rgba(203,213,225,.1) 0%,rgba(148,163,184,.045) 30%,transparent 74%),linear-gradient(180deg,rgba(255,255,255,.022),transparent 170px)}body:after{width:68vw;opacity:.75}}
 @media(prefers-reduced-transparency:reduce){body{background-image:linear-gradient(180deg,rgba(203,213,225,.06),transparent 190px),none}body:after{box-shadow:none}}
+
+/* Deeper titanium crown: extend the wash below the header while keeping its contrast restrained. */
+body{background-image:radial-gradient(ellipse 78% 500px at 50% 18px,rgba(203,213,225,.135) 0%,rgba(148,163,184,.06) 31%,transparent 76%),linear-gradient(180deg,rgba(255,255,255,.032),transparent 330px)}
+@media(max-width:640px){body{background-image:radial-gradient(ellipse 125% 380px at 50% 12px,rgba(203,213,225,.12) 0%,rgba(148,163,184,.052) 32%,transparent 78%),linear-gradient(180deg,rgba(255,255,255,.028),transparent 260px)}}
