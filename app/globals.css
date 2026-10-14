@@ -25,3 +25,15 @@
 .phone-speaker{display:none}
 .hero-product:hover .phone-shell{transform:rotate(0deg) translateY(-10px);box-shadow:none}
 @media(max-width:640px){.phone-shell{width:250px;max-height:none}.phone-screen{inset:5.55% 7.2% 5.15%;padding:16px 11px 10px}.hero-product:hover .phone-shell{transform:rotate(4deg)}}
+/* Header cleanup: one surface, no decorative top sheet or duplicated edge layer. */
+.site-header{padding:14px 20px 0;background:transparent;isolation:isolate}
+.nav-shell{width:min(1180px,calc(100% - 24px));min-height:64px;padding:7px 11px 7px 14px;gap:30px;border:1px solid rgba(203,213,225,.2);background:rgba(8,9,11,.84);box-shadow:0 16px 42px rgba(0,0,0,.3),inset 0 0 0 1px rgba(255,255,255,.025);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:hidden}
+.nav-shell:before,.nav-shell:after{display:none!important}
+.wordmark{gap:8px;font-size:18px;letter-spacing:-.02em;line-height:1}.wordmark .brand-mark{width:28px;height:28px}
+.desktop-nav{gap:28px;font-size:12px}.desktop-nav a{position:relative;padding:10px 1px}.desktop-nav a:after{content:"";position:absolute;right:0;bottom:2px;width:0;height:1px;background:var(--platinum);transition:width .35s var(--ease)}.desktop-nav a:hover:after{width:100%}
+.nav-actions{gap:6px}.nav-github,.nav-download{min-height:42px;border-radius:13px}.nav-github svg{width:15px;height:15px}.nav-download{padding:0 13px;box-shadow:0 5px 14px rgba(255,255,255,.07)}
+.mobile-nav{display:none;margin-right:auto}.menu-button{width:42px;height:42px;border-color:rgba(203,213,225,.22);background:rgba(255,255,255,.045);box-shadow:none}.menu-button:hover,.menu-button:focus-visible{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.42)}.menu-button span{height:1px;width:16px;background:var(--platinum)}
+.mobile-menu{top:82px;right:16px;left:16px;min-height:calc(100dvh - 98px);padding:24px 20px 22px;border:1px solid rgba(203,213,225,.22);border-radius:22px;background:rgba(7,8,10,.96);box-shadow:0 24px 70px rgba(0,0,0,.68),inset 0 0 0 1px rgba(255,255,255,.025);overflow:auto}
+.mobile-menu:before,.mobile-menu:after{display:none!important}.mobile-menu-head{padding-bottom:20px}.mobile-menu nav a{grid-template-columns:34px 1fr 26px;min-height:62px}.mobile-menu nav a b,.mobile-menu .menu-arrow{font-size:17px;font-weight:400;color:var(--titanium);text-align:left;line-height:1}.menu-arrow{display:inline-block;font-family:Arial,sans-serif;transition:transform .3s var(--ease)}.mobile-menu nav a:hover .menu-arrow,.mobile-menu-repo:hover .menu-arrow{transform:translate(-3px,3px)}
+@media(max-width:767px){.site-header{padding:12px 10px 0}.nav-shell{width:calc(100% - 4px);min-height:58px;padding:6px 8px 6px 11px;border-radius:18px}.wordmark .brand-mark{width:26px;height:26px}.desktop-nav,.nav-actions{display:none}.mobile-nav{display:block}.mobile-menu{top:74px;right:10px;left:10px;min-height:calc(100dvh - 86px);border-radius:20px}}
+@media(max-width:767px){.menu-button{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.035);border-color:rgba(203,213,225,.2)}.menu-button span{left:11px;width:16px}}
