@@ -4,7 +4,7 @@ export const site = {
   name: 'Cove',
   repo: 'https://github.com/msayed-io/cove',
   releaseUrl: 'https://github.com/msayed-io/cove/releases',
-  license: 'مستودع مفتوح المصدر — راجع ملفات التراخيص المرفقة داخل المستودع قبل إعادة توزيع الموارد الخارجية.',
+  license: 'مستودع مفتوح المصدر · راجع ملفات التراخيص المرفقة داخل المستودع قبل إعادة توزيع الموارد الخارجية.',
 };
 
 export const nav = [

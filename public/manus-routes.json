@@ -1,1 +1,1 @@
-{"routes":[{"path":"/","title":"Cove — تنزيل الوسائط بجودة عالية"},{"path":"/download","title":"تنزيل Cove"},{"path":"/download/:platform","title":"تنزيل Cove حسب المنصة"}]}
+{"routes":[{"path":"/","title":"Cove · تنزيل الوسائط بجودة عالية"},{"path":"/download","title":"تنزيل Cove"},{"path":"/download/:platform","title":"تنزيل Cove حسب المنصة"}]}
