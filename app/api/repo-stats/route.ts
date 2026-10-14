@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server';
+export const revalidate = 600;
+export async function GET() { try { const headers: HeadersInit = { Accept: 'application/vnd.github+json', 'User-Agent': 'Cove-Landing-Page' }; if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`; const r = await fetch('https://api.github.com/repos/msayed-io/cove', { headers, next: { revalidate: 600 } }); if (!r.ok) return NextResponse.json({ stars: 0 }, { status: 200 }); const d = await r.json(); return NextResponse.json({ stars: d.stargazers_count ?? 0 }); } catch { return NextResponse.json({ stars: 0 }, { status: 200 }); } }

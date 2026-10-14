@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server';
+export const dynamic = 'force-dynamic';
+export async function GET() { const token = process.env.GITHUB_TOKEN; const r = await fetch('https://api.github.com/repos/msayed-io/cove/releases/latest', { headers: { Accept: 'application/vnd.github+json', 'User-Agent': 'Cove-Landing-Page', ...(token ? { Authorization: `Bearer ${token}` } : {}) }, cache: 'no-store' }); if (r.ok) { const d = await r.json(); const apk = (d.assets ?? []).find((a: { name: string }) => a.name.toLowerCase().endsWith('.apk')); if (apk?.browser_download_url) return NextResponse.redirect(apk.browser_download_url, 302); } return NextResponse.redirect('https://github.com/msayed-io/cove/releases', 302); }

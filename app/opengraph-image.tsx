@@ -1,0 +1,6 @@
+import { ImageResponse } from 'next/og';
+export const runtime = 'edge';
+export const alt = 'Cove — حمّل وسائطك بأعلى جودة';
+export const size = { width: 1200, height: 630 };
+export const contentType = 'image/png';
+export default function Image() { return new ImageResponse(<div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '70px', color: '#fff', background: '#07090e', fontFamily: 'sans-serif', direction: 'rtl', position: 'relative' }}><div style={{ position: 'absolute', width: 620, height: 420, top: -130, left: 300, borderRadius: 999, background: 'rgba(37,99,235,.35)', filter: 'blur(90px)' }} /><div style={{ display: 'flex', alignItems: 'center', gap: 20, fontSize: 34, fontWeight: 700, position: 'relative' }}><div style={{ width: 54, height: 54, borderRadius: 18, background: '#f1f5f9', display: 'flex' }} /><span>Cove</span></div><div style={{ marginTop: 60, fontSize: 74, lineHeight: 1.15, fontWeight: 700, position: 'relative' }}>حمّل وسائطك،<br /><span style={{ color: '#60a5fa' }}>بأعلى جودة.</span></div><div style={{ marginTop: 24, color: '#94a3b8', fontSize: 25, position: 'relative' }}>تطبيق Android عربي مفتوح المصدر</div></div>, { ...size }); }
