@@ -37,3 +37,10 @@
 .mobile-menu:before,.mobile-menu:after{display:none!important}.mobile-menu-head{padding-bottom:20px}.mobile-menu nav a{grid-template-columns:34px 1fr 26px;min-height:62px}.mobile-menu nav a b,.mobile-menu .menu-arrow{font-size:17px;font-weight:400;color:var(--titanium);text-align:left;line-height:1}.menu-arrow{display:inline-block;font-family:Arial,sans-serif;transition:transform .3s var(--ease)}.mobile-menu nav a:hover .menu-arrow,.mobile-menu-repo:hover .menu-arrow{transform:translate(-3px,3px)}
 @media(max-width:767px){.site-header{padding:12px 10px 0}.nav-shell{width:calc(100% - 4px);min-height:58px;padding:6px 8px 6px 11px;border-radius:18px}.wordmark .brand-mark{width:26px;height:26px}.desktop-nav,.nav-actions{display:none}.mobile-nav{display:block}.mobile-menu{top:74px;right:10px;left:10px;min-height:calc(100dvh - 86px);border-radius:20px}}
 @media(max-width:767px){.menu-button{width:40px;height:40px;border-radius:12px;background:rgba(255,255,255,.035);border-color:rgba(203,213,225,.2)}.menu-button span{left:11px;width:16px}}
+
+/* Final shape language: no mobile menu, every interactive control uses a complete pill. */
+.site-header{padding:14px 20px 0}
+.nav-shell{border-radius:999px!important;overflow:hidden}
+.nav-github,.nav-download,.hero-primary,.hero-secondary,.button,.paste-button,.search-button,.detected-download,.mobile-menu-repo{border-radius:999px!important}
+.hero-primary>span{border-radius:50%}
+@media(max-width:767px){.site-header{padding:12px 10px 0}.nav-shell{width:calc(100% - 4px);min-height:56px;padding:6px 12px;border-radius:999px!important}.mobile-nav{display:none!important}.wordmark{margin-inline-start:auto;margin-inline-end:auto}.wordmark .brand-mark{width:27px;height:27px}}

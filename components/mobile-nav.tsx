@@ -1,4 +1,5 @@
 'use client';
-import { useState } from 'react';
-import { nav } from '../lib/content';
-export function MobileNav({ repo }: { repo: string }) { const [open, setOpen] = useState(false); return <div className="mobile-nav"><button className={`menu-button ${open ? 'is-open' : ''}`} aria-label={open ? 'إغلاق القائمة' : 'فتح القائمة'} aria-expanded={open} onClick={() => setOpen(!open)}><span/><span/><span/></button>{open && <div className="mobile-menu"><div className="mobile-menu-head"><span>استوديو الوسائط الشخصي</span><span>COVE / MENU</span></div><nav aria-label="تنقل الهاتف">{nav.map((item, index) => <a href={item.href} key={item.href} style={{ '--delay': `${index * 70}ms` } as React.CSSProperties} onClick={() => setOpen(false)}><small>0{index + 1}</small>{item.label}<span className="menu-arrow" aria-hidden="true">↗</span></a>)}</nav><a className="mobile-menu-repo" href={repo} target="_blank" rel="noopener noreferrer">فتح المصدر على GitHub <span className="menu-arrow" aria-hidden="true">↗</span></a></div>}</div>; }
+
+export function MobileNav(_props: { repo?: string }) {
+  return null;
+}
