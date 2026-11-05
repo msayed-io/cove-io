@@ -113,3 +113,69 @@ body:after{left:0;width:100%;transform:none}
 .download-panel{transition:transform .55s var(--ease),border-color .55s var(--ease),box-shadow .55s var(--ease);will-change:transform}.release-card-head{padding:18px 22px 17px;align-items:center}.release-identity{gap:5px}.release-kicker{font-size:8px}.download-panel h3{font-size:31px}.release-date{font-size:10px}.release-badge{padding:5px 9px;font-size:9px}.download-main{padding:20px 22px;gap:18px}.file-summary{gap:11px}.file-icon{width:44px;height:51px;border-radius:11px;font-size:10px}.file-summary>div:last-child{gap:4px}.file-kicker{font-size:9px}.download-main strong{font-size:17px}.download-main span:last-child{font-size:10px}.download-button{min-height:46px;padding-left:12px;gap:10px}.download-button b{width:31px;height:31px}.download-meta{padding:11px 22px;gap:7px}.download-meta>a,.download-meta>span{padding:5px 8px;font-size:9px}.other-files{padding:0 22px}.other-files summary{min-height:43px;font-size:11px}.other-files>div{padding-bottom:12px}.other-files a{padding:7px 0;font-size:10px}
 @media(hover:hover){.download-panel:hover{transform:translateY(-6px);border-color:rgba(203,213,225,.38);box-shadow:0 34px 90px rgba(0,0,0,.5),0 0 0 1px rgba(203,213,225,.04),inset 0 1px 0 rgba(255,255,255,.24)}.download-panel:hover:before{opacity:1;background:linear-gradient(90deg,transparent,rgba(255,255,255,.82),transparent)}.download-panel:hover .file-icon{transform:translateY(-2px) rotate(-3deg);border-color:rgba(203,213,225,.48);background:linear-gradient(145deg,rgba(203,213,225,.22),rgba(255,255,255,.04));box-shadow:0 10px 22px rgba(203,213,225,.1),inset 0 1px 0 rgba(255,255,255,.28)}.download-panel:hover .download-button{box-shadow:0 12px 28px rgba(203,213,225,.17)}.download-panel:hover .download-button b{transform:translateX(-2px);background:#17191d}.download-panel .file-icon,.download-panel .download-button,.download-panel .download-button b{transition:transform .45s var(--ease),background .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease)}.download-meta>a,.download-meta>span{transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}.download-meta>a:hover,.download-meta>span:hover{border-color:rgba(203,213,225,.26);background:rgba(255,255,255,.07);color:var(--platinum)}}
 @media(max-width:640px){.release-card-head{padding:16px 16px 15px}.download-panel h3{font-size:28px}.download-main{padding:18px 16px;gap:16px}.download-meta{padding:10px 16px}.other-files{padding:0 16px}.other-files summary{min-height:40px}}
+
+
+/* LiquidGlass2 material system extracted from the supplied Windhawk source.
+   Reference values: #1C101010 tint, saturation 1.2, multi-stop silver stroke,
+   20px shadow blur with 9px vertical offset, and restrained rounded geometry. */
+:root{
+  --lg2-tint:rgba(16,16,16,.11);
+  --lg2-tint-deep:rgba(16,16,16,.18);
+  --lg2-blur:20px;
+  --lg2-saturation:1.2;
+  --lg2-border-top:rgba(224,224,224,.41);
+  --lg2-border-light:rgba(112,112,112,.44);
+  --lg2-border-mid:rgba(41,41,41,.44);
+  --lg2-border-bottom:rgba(208,208,208,.40);
+  --lg2-shadow:0 9px 20px rgba(0,0,0,.32);
+  --lg2-inner:inset 0 1px 0 rgba(224,224,224,.41),inset 0 -1px 0 rgba(208,208,208,.18);
+  --lg2-radius:30px;
+}
+
+/* Shared material: backdrop blur + desaturated charcoal tint + silver edge. */
+.nav-shell,.mobile-menu,.studio-search,.hero-detected,.shot-frame:not(:has(.shot-image)),.oss-aside,.download-panel,.hero-symbol,.media-thumb,.file-icon{
+  position:relative;
+  background-color:var(--lg2-tint);
+  background-image:linear-gradient(180deg,rgba(224,224,224,.055) 0%,rgba(64,64,64,.025) 22%,rgba(16,16,16,.03) 52%,rgba(208,208,208,.035) 100%);
+  -webkit-backdrop-filter:blur(var(--lg2-blur)) saturate(var(--lg2-saturation));
+  backdrop-filter:blur(var(--lg2-blur)) saturate(var(--lg2-saturation));
+  box-shadow:var(--lg2-shadow),var(--lg2-inner);
+}
+
+/* The source uses a seven-stop vertical stroke; this pseudo-element recreates it
+   without changing layout or reducing the usable inner surface. */
+.nav-shell:before,.mobile-menu:before,.studio-search:before,.hero-detected:before,.shot-frame:not(:has(.shot-image)):before,.oss-aside:before,.download-panel:before,.hero-symbol:before,.media-thumb:before,.file-icon:before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;opacity:.92;
+  background:linear-gradient(180deg,var(--lg2-border-top) 0%,var(--lg2-border-light) 10%,var(--lg2-border-mid) 25%,rgba(41,41,41,.44) 50%,var(--lg2-border-mid) 75%,var(--lg2-border-light) 90%,var(--lg2-border-bottom) 100%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+
+.nav-shell{border-color:transparent!important;background-color:rgba(16,16,16,.11)!important;border-radius:30px!important;box-shadow:var(--lg2-shadow),var(--lg2-inner)!important}
+.site-header{background:linear-gradient(180deg,rgba(0,0,0,.86),rgba(0,0,0,.35),transparent)!important}
+.mobile-menu{border-color:transparent!important;border-radius:30px!important;background-color:rgba(16,16,16,.18)!important}
+.studio-search{border-color:transparent!important;background-color:rgba(16,16,16,.11)!important}
+.studio-search:focus-within{box-shadow:0 9px 20px rgba(0,0,0,.32),inset 0 1px 0 rgba(224,224,224,.55),0 0 0 4px rgba(255,255,255,.035)!important}
+.hero-detected{border-color:transparent!important;background-color:rgba(16,16,16,.18)!important}
+.hero-symbol,.media-thumb,.file-icon{border-color:transparent!important;background-color:rgba(16,16,16,.18)!important}
+.oss-aside{border-color:transparent!important;background-color:rgba(16,16,16,.11)!important}
+.download-panel{border-color:transparent!important;background-color:rgba(16,16,16,.18)!important}
+
+/* Fine grain is deliberately sparse: the source's noise layer is optional and
+   very low-density, so it should read as material rather than visual noise. */
+.nav-shell:after,.mobile-menu:after,.studio-search:after,.hero-detected:after,.download-panel:after{
+  content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;opacity:.08;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 96 96' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='lg2n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23lg2n)' opacity='.22'/%3E%3C/svg%3E");background-size:96px 96px}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .nav-shell,.mobile-menu,.studio-search,.hero-detected,.download-panel{background:rgba(16,16,16,.88)!important}
+}
+
+@media(max-width:640px){
+  :root{--lg2-blur:16px}
+  .nav-shell{border-radius:30px!important}
+  .mobile-menu{border-radius:24px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .nav-shell,.mobile-menu,.studio-search,.hero-detected,.download-panel{transition:none!important}
+}
